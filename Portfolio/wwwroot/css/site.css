@@ -403,14 +403,14 @@ p {
 
 .profile-card {
   position: relative;
-  width: 350px;
-  height: 350px;
+  width: 420px;
+  height: 420px;
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 
-    0 0 15px rgba(0, 255, 136, 0.3),
-    0 0 30px rgba(0, 255, 136, 0.2);
-  border: 2px solid rgba(0, 255, 136, 0.5);
+    0 0 20px rgba(0, 255, 136, 0.4),
+    0 0 40px rgba(0, 255, 136, 0.3);
+  border: 3px solid rgba(0, 255, 136, 0.6);
 }
 
 .card-glow {
@@ -431,6 +431,15 @@ p {
   object-fit: cover;
   border-radius: 50%;
   border: 5px solid rgba(255, 255, 255, 0.1);
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  filter: contrast(1.1) brightness(1.05) saturate(1.1);
+  transition: var(--transition);
+}
+
+.profile-img:hover {
+  filter: contrast(1.15) brightness(1.1) saturate(1.15);
+  transform: scale(1.02);
 }
 
 .floating-elements {
@@ -1322,6 +1331,11 @@ p {
     flex-direction: column;
     align-items: center;
   }
+  
+  .profile-card {
+    width: 350px;
+    height: 350px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1348,8 +1362,8 @@ p {
   }
   
   .profile-card {
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
   }
   
   .floating-tech {

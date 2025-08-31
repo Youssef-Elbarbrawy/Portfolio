@@ -244,6 +244,28 @@ document.addEventListener('DOMContentLoaded', function() {
         element.style.animationDelay = `${index * 0.5}s`;
     });
 
+    // CV Download functionality
+    const cvDownloadButton = document.querySelector('a[href*="Youssef_Mohammad_CV.pdf"]');
+    if (cvDownloadButton) {
+        cvDownloadButton.addEventListener('click', function(e) {
+            // Check if file exists by trying to fetch it
+            fetch(this.href, { method: 'HEAD' })
+                .then(response => {
+                    if (!response.ok) {
+                        e.preventDefault();
+                        showToast('📄 CV file not found. Please add your CV to the files folder.', 'warning');
+                        console.log('To add your CV: Place "Youssef_Mohammad_CV.pdf" in wwwroot/files/ folder');
+                    } else {
+                        showToast('📥 Downloading CV...', 'success');
+                    }
+                })
+                .catch(() => {
+                    e.preventDefault();
+                    showToast('📄 CV file not available yet. Coming soon!', 'info');
+                });
+        });
+    }
+
     // Enhanced copy email to clipboard functionality
     const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
     emailLinks.forEach(link => {
