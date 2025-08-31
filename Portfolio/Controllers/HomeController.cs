@@ -109,7 +109,7 @@ namespace Portfolio.Controllers
                         LongDescription = "Developed a professional portfolio website using ASP.NET Core MVC with a modern tech-inspired design. Features include responsive layout with Bootstrap 5, animated UI elements, project showcases with image carousels and embedded videos, interactive skills visualization, and optimized performance. The site demonstrates proficiency in full-stack development, modern web design principles, and user experience optimization.",
                         Technologies = new List<string> { "C#", "ASP.NET Core MVC", "HTML5", "CSS3", "JavaScript", "Bootstrap 5", "Font Awesome", "Responsive Design", "CSS Animations", "Video Integration" },
                         GitHubUrl = "https://github.com/MrBarbrawy/Portfolio",
-                        LiveUrl = "https://yourportfolio.com", // Update with your actual live URL if deployed
+                        LiveUrl = "https://portfolio0-h0babmaxgecrhrew.canadacentral-01.azurewebsites.net/",
                         StartDate = "Dec 2024",
                         EndDate = "Dec 2024",
                         Type = ProjectType.WebApplication,
