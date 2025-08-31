@@ -1,0 +1,400 @@
+@model Portfolio.Models.PortfolioViewModel
+@{
+    ViewData["Title"] = "Portfolio";
+}
+
+<!-- Hero Section -->
+<section id="hero" class="hero-section">
+    <div class="hero-background">
+        <div class="code-animation"></div>
+    </div>
+    <div class="container">
+        <div class="row align-items-center min-vh-100">
+            <div class="col-lg-6 order-2 order-lg-1">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="text-gradient">@Model.PersonalInfo.Name</span>
+                    </h1>
+                    <h2 class="hero-subtitle">@Model.PersonalInfo.Title</h2>
+                    <p class="hero-description">
+                        Crafting robust back-end solutions with <strong>ASP.NET Core</strong>, <strong>Entity Framework</strong>, and <strong>Clean Architecture</strong>. 
+                        Passionate about building scalable applications that solve real-world problems.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">@Model.Projects.Count+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">2+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">@Model.Skills.Count(s => s.Category == Portfolio.Models.SkillCategory.ProgrammingLanguages || s.Category == Portfolio.Models.SkillCategory.Frameworks)+</span>
+                            <span class="stat-label">Technologies</span>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary btn-lg me-3">
+                            <i class="fas fa-eye me-2"></i>View My Work
+                        </a>
+                        <a href="#contact" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-download me-2"></i>Download CV
+                        </a>
+                    </div>
+                    <div class="hero-social">
+                        <a href="https://@Model.PersonalInfo.LinkedIn" target="_blank" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://@Model.PersonalInfo.GitHub" target="_blank" class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:@Model.PersonalInfo.Email" class="social-icon">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2">
+                <div class="hero-image">
+                    <div class="profile-card">
+                        <div class="card-glow"></div>
+                        <img src="@Model.PersonalInfo.ProfileImagePath" alt="@Model.PersonalInfo.Name" class="profile-img" />
+                        <div class="floating-elements">
+                            <div class="floating-tech" data-tech="C#"><i class="fab fa-microsoft"></i></div>
+                            <div class="floating-tech" data-tech="ASP.NET"><i class="fas fa-globe"></i></div>
+                            <div class="floating-tech" data-tech="SQL"><i class="fas fa-database"></i></div>
+                            <div class="floating-tech" data-tech="Git"><i class="fab fa-git-alt"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <a href="#about" class="scroll-down">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-header text-center">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="section-subtitle">Passionate developer with a drive for excellence</p>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="about-content">
+                    <p class="about-text">@Model.PersonalInfo.Summary</p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-code text-primary"></i>
+                            <div>
+                                <h5>Clean Code Advocate</h5>
+                                <p>Writing maintainable, scalable, and well-documented code following SOLID principles.</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-lightbulb text-warning"></i>
+                            <div>
+                                <h5>Problem Solver</h5>
+                                <p>Analytical mindset with strong problem-solving skills and attention to detail.</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-users text-success"></i>
+                            <div>
+                                <h5>Team Player</h5>
+                                <p>Collaborative approach to development with excellent communication skills.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-info">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Location</span>
+                            <span class="info-value">@Model.PersonalInfo.Location</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Email</span>
+                            <span class="info-value">@Model.PersonalInfo.Email</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Phone</span>
+                            <span class="info-value">@Model.PersonalInfo.Phone</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Degree</span>
+                            <span class="info-value">@Model.Education.Degree</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="skills-section section-padding bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-header text-center">
+                    <h2 class="section-title text-white">Technical Skills</h2>
+                    <p class="section-subtitle text-light">Technologies I work with</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @{
+                var skillCategories = Model.Skills.GroupBy(s => s.Category).ToList();
+            }
+            @foreach (var category in skillCategories)
+            {
+                <div class="col-lg-6 col-xl-4 mb-4">
+                    <div class="skill-category">
+                        <h4 class="category-title">@category.Key.ToString().Replace("ProgrammingLanguages", "Programming Languages")</h4>
+                        <div class="skills-list">
+                            @foreach (var skill in category)
+                            {
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <i class="@skill.Icon skill-icon"></i>
+                                        <span class="skill-name">@skill.Name</span>
+                                    </div>
+                                    <div class="skill-level">
+                                        <div class="progress">
+                                            <div class="progress-bar" style="width: @(skill.ProficiencyLevel * 20)%" data-level="@skill.ProficiencyLevel"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="projects-section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="section-subtitle">Showcasing my best work in .NET development</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var project in Model.Projects)
+            {
+                <div class="col-lg-6 mb-5">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-type-badge">@project.Type</div>
+                            <h3 class="project-title">@project.Name</h3>
+                            <p class="project-description">@project.Description</p>
+                        </div>
+                        
+                        @if (project.ImagePaths.Any() || !string.IsNullOrEmpty(project.VideoUrl))
+                        {
+                            <div class="project-gallery">
+                                <div id="carousel@(project.Name.Replace(" ", "").Replace("-", ""))" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        @{
+                                            int itemIndex = 0;
+                                        }
+                                        
+                                        @* Display Video First if Available *@
+                                        @if (!string.IsNullOrEmpty(project.VideoUrl))
+                                        {
+                                            <div class="carousel-item @(itemIndex == 0 ? "active" : "")">
+                                                <div class="video-container">
+                                                    <video controls class="d-block w-100" poster="/images/video-poster.jpg">
+                                                        <source src="@project.VideoUrl" type="video/mp4">
+                                                        <p>Your browser doesn't support HTML5 video. <a href="@project.VideoUrl">Download the video</a> instead.</p>
+                                                    </video>
+                                                    <div class="video-overlay">
+                                                        <i class="fas fa-play-circle"></i>
+                                                        <span>Demo Video</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            itemIndex++;
+                                        }
+                                        
+                                        @* Display Images *@
+                                        @for (int i = 0; i < project.ImagePaths.Count; i++)
+                                        {
+                                            <div class="carousel-item @(itemIndex == 0 ? "active" : "")">
+                                                <img src="@project.ImagePaths[i]" class="d-block w-100" alt="@project.Name screenshot">
+                                            </div>
+                                            itemIndex++;
+                                        }
+                                    </div>
+                                    @if ((project.ImagePaths.Count + (!string.IsNullOrEmpty(project.VideoUrl) ? 1 : 0)) > 1)
+                                    {
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel@(project.Name.Replace(" ", "").Replace("-", ""))" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon"></span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#carousel@(project.Name.Replace(" ", "").Replace("-", ""))" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon"></span>
+                                        </button>
+                                    }
+                                </div>
+                            </div>
+                        }
+
+                        <div class="project-details">
+                            <div class="project-timeline">
+                                <i class="fas fa-calendar me-2"></i>
+                                <span>@project.StartDate - @project.EndDate</span>
+                            </div>
+                            
+                            <div class="project-tech">
+                                @foreach (var tech in project.Technologies.Take(6))
+                                {
+                                    <span class="tech-badge">@tech</span>
+                                }
+                                @if (project.Technologies.Count > 6)
+                                {
+                                    <span class="tech-badge more">+@(project.Technologies.Count - 6) more</span>
+                                }
+                            </div>
+
+                            <div class="project-features">
+                                <h5>Key Features:</h5>
+                                <ul>
+                                    @foreach (var feature in project.KeyFeatures.Take(4))
+                                    {
+                                        <li>@feature</li>
+                                    }
+                                </ul>
+                            </div>
+
+                            <div class="project-actions">
+                                <a href="@project.GitHubUrl" target="_blank" class="btn btn-outline-primary">
+                                    <i class="fab fa-github me-2"></i>View Code
+                                </a>
+                                @if (!string.IsNullOrEmpty(project.LiveUrl))
+                                {
+                                    <a href="@project.LiveUrl" target="_blank" class="btn btn-success">
+                                        <i class="fas fa-external-link-alt me-2"></i>Live Demo
+                                    </a>
+                                }
+                                @if (!string.IsNullOrEmpty(project.VideoUrl))
+                                {
+                                    <button type="button" class="btn btn-primary" onclick="scrollToVideo('@project.Name.Replace(" ", "").Replace("-", "")')">
+                                        <i class="fas fa-play me-2"></i>Watch Demo
+                                    </button>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Education Section -->
+<section id="education" class="education-section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Education & Certifications</h2>
+                    <p class="section-subtitle">Academic background and professional development</p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="education-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>@Model.Education.Degree</h4>
+                            <h5>@Model.Education.Institution</h5>
+                            <span class="timeline-date">@Model.Education.Duration</span>
+                            <p>GPA: @Model.Education.GPA</p>
+                            <p>Specialized in software development, database management, and business analysis with focus on modern development practices.</p>
+                        </div>
+                    </div>
+                    
+                    @foreach (var cert in Model.Certifications)
+                    {
+                        <div class="timeline-item">
+                            <div class="timeline-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>@cert.Name</h4>
+                                <h5>@cert.Issuer</h5>
+                                <span class="timeline-date">@cert.Date</span>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section section-padding bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-header text-center">
+                    <h2 class="section-title text-white">Let's Work Together</h2>
+                    <p class="section-subtitle text-light">Ready to bring your ideas to life</p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="contact-content text-center">
+                    <p class="contact-intro text-light">
+                        I'm always interested in new opportunities and exciting projects. 
+                        Whether you have a project in mind or just want to connect, I'd love to hear from you.
+                    </p>
+                    <div class="contact-methods">
+                        <a href="mailto:@Model.PersonalInfo.Email" class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <span>@Model.PersonalInfo.Email</span>
+                        </a>
+                        <a href="https://@Model.PersonalInfo.LinkedIn" target="_blank" class="contact-method">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>LinkedIn Profile</span>
+                        </a>
+                        <a href="https://@Model.PersonalInfo.GitHub" target="_blank" class="contact-method">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub Portfolio</span>
+                        </a>
+                    </div>
+                    <div class="cta-section">
+                        <a href="mailto:@Model.PersonalInfo.Email" class="btn btn-primary btn-lg">
+                            <i class="fas fa-paper-plane me-2"></i>Get In Touch
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
