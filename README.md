@@ -1,8 +1,8 @@
-# 🚀 Professional Portfolio - Youssef Younes
+# 🚀 Professional Portfolio - Youssef Mohammad
 
 A modern, responsive portfolio website built with ASP.NET Core MVC, showcasing my skills and projects as a Back-End Developer.
 
-![Portfolio Screenshot](https://via.placeholder.com/800x400/0a0a0f/00ff88?text=Portfolio+Preview)
+
 
 ## ✨ Features
 
@@ -68,31 +68,6 @@ A modern, responsive portfolio website built with ASP.NET Core MVC, showcasing m
 - **Responsive Design** - Mobile-first approach
 - **Performance Optimization** - Fast loading times
 
-## 📋 Prerequisites
-
-- [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
-- A code editor like [Visual Studio](https://visualstudio.microsoft.com/) or [VS Code](https://code.visualstudio.com/)
-
-## 🚀 Getting Started
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/MrBarbrawy/Portfolio.git
-   cd Portfolio
-   ```
-
-2. **Restore dependencies**
-   ```bash
-   dotnet restore
-   ```
-
-3. **Run the application**
-   ```bash
-   dotnet run
-   ```
-
-4. **Open in browser**
-   Navigate to `https://localhost:5001` or `http://localhost:5000`
 
 ## 📁 Project Structure
 
@@ -117,53 +92,8 @@ Portfolio/
 └── Portfolio.csproj      # Project file
 ```
 
-## 🎨 Customization
 
-### Adding New Projects
-1. Open `Controllers/HomeController.cs`
-2. Add a new `Project` object to the `Projects` list in `GetPortfolioData()`
-3. Include project images in `wwwroot/images/`
 
-### Updating Personal Information
-1. Modify the `PersonalInfo` object in `HomeController.cs`
-2. Update skills, education, and certifications as needed
-
-### Styling Changes
-1. Edit `wwwroot/css/site.css` for visual customizations
-2. Modify CSS variables at the top for color scheme changes
-
-## 📸 Media Assets
-
-### Required Folders
-```
-wwwroot/images/
-├── profile/              # Profile photo
-├── illvent/             # ILLVent project screenshots
-└── companyadmin/        # Company Admin project assets
-```
-
-### Supported Formats
-- **Images**: JPG, PNG, WebP
-- **Videos**: MP4, WebM
-
-## 🌐 Deployment
-
-### Azure App Service
-1. Publish using Visual Studio or Azure CLI
-2. Configure environment variables if needed
-3. Update `LiveUrl` in project data
-
-### Other Platforms
-- **Heroku**: Use buildpacks for .NET Core
-- **Railway**: Deploy directly from GitHub
-- **DigitalOcean**: Use App Platform for .NET
-
-## 📱 Browser Support
-
-- ✅ Chrome (90+)
-- ✅ Firefox (88+)
-- ✅ Safari (14+)
-- ✅ Edge (90+)
 
 ## 📄 License
 
@@ -171,20 +101,14 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 👨‍💻 About the Developer
 
-**Youssef Younes** - Back-End Developer  
-📧 Email: [youssef.younes.dev@gmail.com](mailto:youssef.younes.dev@gmail.com)  
-🔗 LinkedIn: [Connect with me](https://linkedin.com/in/youssefyounes)  
+**Youssef Mohammad** - Back-End Developer  
+📧 Email: [youssefmohammad000@gmail.com](mailto:youssefmohammad000@gmail.com)  
+🔗 LinkedIn: [Connect with me](https://www.linkedin.com/in/youssef-mohammad10/)  
 🐙 GitHub: [MrBarbrawy](https://github.com/MrBarbrawy)  
 
-### Education
-- **B.S. in Business Information Systems**
-- **Helwan University** (2021-2025)
-- **GPA**: 3.99/4.0
+
 
 ---
 
 ⭐ **Star this repository** if you found it helpful or inspiring!
 
-📝 **Fork and customize** to create your own professional portfolio!
-
-🤝 **Contributions welcome** - feel free to submit issues and enhancement requests!
