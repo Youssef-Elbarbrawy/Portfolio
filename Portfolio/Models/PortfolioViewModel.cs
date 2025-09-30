@@ -17,7 +17,7 @@ namespace Portfolio.Models
         public string Location { get; set; } = "Cairo, Egypt";
         public string Email { get; set; } = "youssefmohammad000@gmail.com";
         public string LinkedIn { get; set; } = "www.linkedin.com/in/youssef-mohammad10";
-        public string GitHub { get; set; } = "github.com/MrBarbrawy";
+        public string GitHub { get; set; } = "github.com/Youssef-Elbarbrawy";
         public string Phone { get; set; } = "+201011222194";
         public string Summary { get; set; } = "Recent Business Information Systems graduate from Helwan University specializing in .NET development and back-end solutions. Experienced in solving complex problems and delivering efficient software applications through hands-on project experience. Proficiency in ASP.NET Core, C#, Entity Framework, and SQL enables effective delivery across Software Development Lifecycle from requirements analysis to deployment.";
         public string ProfileImagePath { get; set; } = "/images/profile/youssef-profile.jpg";
